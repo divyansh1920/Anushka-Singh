@@ -60,7 +60,7 @@
         }
 
         .logo {
-            max-width: 400px;
+            max-width: 220px;
             margin-bottom: 24px;
             background: white;
             padding: 14px 28px;
@@ -109,12 +109,6 @@
             border-radius: 12px;
             border-left: 5px solid #42A5F5;
             box-shadow: 0 4px 15px rgba(66, 165, 245, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .section:hover {
-            box-shadow: 0 6px 25px rgba(66, 165, 245, 0.12);
-            transform: translateY(-2px);
         }
 
         .section-title {
@@ -122,15 +116,6 @@
             font-size: 22px;
             font-weight: 600;
             margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .section-title::before {
-            content: '●';
-            color: #42A5F5;
-            font-size: 14px;
         }
 
         .section-subtitle {
@@ -146,12 +131,6 @@
             background: white;
             border-radius: 10px;
             border: 1px solid #E3F2FD;
-            transition: all 0.2s ease;
-        }
-
-        .question:hover {
-            border-color: #90CAF9;
-            box-shadow: 0 2px 8px rgba(66, 165, 245, 0.1);
         }
 
         .question-label {
@@ -167,7 +146,6 @@
             color: #42A5F5;
             font-weight: 700;
             margin-right: 8px;
-            font-size: 16px;
         }
 
         .options {
@@ -180,7 +158,7 @@
             display: flex;
             align-items: center;
             padding: 14px 18px;
-            border: 1px solid #E1F5FE;
+            border: 2px solid #E1F5FE;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.25s ease;
@@ -190,13 +168,6 @@
         .radio-option:hover, .checkbox-option:hover {
             border-color: #42A5F5;
             background: #E3F2FD;
-            transform: translateX(4px);
-        }
-
-        .radio-option input:checked ~ label,
-        .checkbox-option input:checked ~ label {
-            color: #1565C0;
-            font-weight: 500;
         }
 
         .radio-option input, .checkbox-option input {
@@ -212,7 +183,6 @@
             font-size: 14.5px;
             color: #424242;
             flex: 1;
-            transition: all 0.2s ease;
         }
 
         .rating-table {
@@ -236,7 +206,7 @@
             padding: 14px 10px;
             font-size: 13.5px;
             font-weight: 500;
-            text-align: center;
+            text-align: left;
         }
 
         .rating-table td {
@@ -245,11 +215,6 @@
             text-align: center;
             font-size: 14px;
             background: #FAFAFA;
-            transition: background 0.2s ease;
-        }
-
-        .rating-table tr:hover td {
-            background: #E3F2FD;
         }
 
         .rating-table td:first-child {
@@ -274,7 +239,6 @@
             font-family: inherit;
             font-size: 14.5px;
             resize: vertical;
-            transition: all 0.3s ease;
             background: #FAFAFA;
         }
 
@@ -282,7 +246,6 @@
             outline: none;
             border-color: #42A5F5;
             background: white;
-            box-shadow: 0 0 0 3px rgba(66, 165, 245, 0.1);
         }
 
         .submit-section {
@@ -302,26 +265,6 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 6px 20px rgba(33, 150, 243, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .submit-btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .submit-btn:hover::before {
-            width: 300px;
-            height: 300px;
         }
 
         .submit-btn:hover {
@@ -329,8 +272,9 @@
             box-shadow: 0 8px 25px rgba(33, 150, 243, 0.4);
         }
 
-        .submit-btn:active {
-            transform: translateY(-1px);
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
         }
 
         .footer {
@@ -356,7 +300,6 @@
             margin: 25px 0;
             border: 2px solid #81C784;
             font-weight: 500;
-            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.15);
         }
 
         .error-message {
@@ -368,19 +311,9 @@
             margin: 25px 0;
             border: 2px solid #E57373;
             font-weight: 500;
-            box-shadow: 0 4px 15px rgba(198, 40, 40, 0.15);
         }
 
         @media (max-width: 768px) {
-            .header {
-                padding: 40px 25px;
-            }
-            .header h1 {
-                font-size: 24px;
-            }
-            .header h2 {
-                font-size: 18px;
-            }
             .form-content {
                 padding: 35px 25px;
             }
@@ -390,49 +323,23 @@
             .question {
                 padding: 16px;
             }
-            .rating-table {
-                font-size: 11px;
-            }
-            .rating-table th,
-            .rating-table td {
-                padding: 10px 6px;
-            }
-            .submit-btn {
-                padding: 16px 45px;
-                font-size: 16px;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .container {
-            animation: fadeIn 0.6s ease;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <img src="https://www.fsm.ac.in/common/img/logo.png" alt="FORE School Bank Logo" class="logo">
+            <img src="https://www.icicibank.com/content/dam/icicibank/managed-assets/images/common/icici-bank-logo.png" alt="ICICI Bank" class="logo">
             <h1>Customer Survey Questionnaire</h1>
             <h2>Investment Products & Financial Behaviour</h2>
-            <p>Hello! This is a short survey about your investment habits and preferences. Takes about 5-7 minutes. All responses are confidential and used only for academic research. Your honest opinion helps us understand consumer needs and how banks can improve their products.</p>
+            <p>Quick survey about your investment habits. Takes 5-7 minutes. All responses confidential, used only for academic research.</p>
         </div>
 
         <div class="form-content">
             <form id="surveyForm">
                 <!-- SECTION A -->
                 <div class="section">
-                    <h3 class="section-title">Section A - About You</h3>
+                    <h3 class="section-title">Section A — About You</h3>
                     <p class="section-subtitle">5 Questions</p>
 
                     <div class="question">
@@ -473,12 +380,12 @@
                                 <label for="q2_1">Student</label>
                             </div>
                             <div class="radio-option">
-                                <input type="radio" name="q2" value="Salaried - Private sector" id="q2_2">
-                                <label for="q2_2">Salaried - Private sector</label>
+                                <input type="radio" name="q2" value="Salaried — Private sector" id="q2_2">
+                                <label for="q2_2">Salaried — Private sector</label>
                             </div>
                             <div class="radio-option">
-                                <input type="radio" name="q2" value="Salaried - Government / PSU" id="q2_3">
-                                <label for="q2_3">Salaried - Government / PSU</label>
+                                <input type="radio" name="q2" value="Salaried — Government / PSU" id="q2_3">
+                                <label for="q2_3">Salaried — Government / PSU</label>
                             </div>
                             <div class="radio-option">
                                 <input type="radio" name="q2" value="Self-employed / Business owner" id="q2_4">
@@ -529,16 +436,16 @@
                         </label>
                         <div class="options">
                             <div class="radio-option">
-                                <input type="radio" name="q4" value="Yes - it is my primary bank" id="q4_1" required>
-                                <label for="q4_1">Yes - it is my primary bank</label>
+                                <input type="radio" name="q4" value="Yes — it is my primary bank" id="q4_1" required>
+                                <label for="q4_1">Yes — it is my primary bank</label>
                             </div>
                             <div class="radio-option">
-                                <input type="radio" name="q4" value="Yes - I use it as a secondary bank" id="q4_2">
-                                <label for="q4_2">Yes - I use it as a secondary bank</label>
+                                <input type="radio" name="q4" value="Yes — I use it as a secondary bank" id="q4_2">
+                                <label for="q4_2">Yes — I use it as a secondary bank</label>
                             </div>
                             <div class="radio-option">
-                                <input type="radio" name="q4" value="No - I bank with another bank" id="q4_3">
-                                <label for="q4_3">No - I bank with another bank</label>
+                                <input type="radio" name="q4" value="No — I bank with another bank" id="q4_3">
+                                <label for="q4_3">No — I bank with another bank</label>
                             </div>
                         </div>
                     </div>
@@ -549,16 +456,16 @@
                         </label>
                         <div class="options">
                             <div class="radio-option">
-                                <input type="radio" name="q5" value="Conservative - I want safe, guaranteed returns even if they are lower" id="q5_1" required>
-                                <label for="q5_1">Conservative - I want safe, guaranteed returns even if they are lower</label>
+                                <input type="radio" name="q5" value="Conservative — I want safe, guaranteed returns even if they are lower" id="q5_1" required>
+                                <label for="q5_1">Conservative — I want safe, guaranteed returns even if they are lower</label>
                             </div>
                             <div class="radio-option">
-                                <input type="radio" name="q5" value="Moderate - I can accept some risk for better returns" id="q5_2">
-                                <label for="q5_2">Moderate - I can accept some risk for better returns</label>
+                                <input type="radio" name="q5" value="Moderate — I can accept some risk for better returns" id="q5_2">
+                                <label for="q5_2">Moderate — I can accept some risk for better returns</label>
                             </div>
                             <div class="radio-option">
-                                <input type="radio" name="q5" value="Aggressive - I am comfortable with high risk for high returns" id="q5_3">
-                                <label for="q5_3">Aggressive - I am comfortable with high risk for high returns</label>
+                                <input type="radio" name="q5" value="Aggressive — I am comfortable with high risk for high returns" id="q5_3">
+                                <label for="q5_3">Aggressive — I am comfortable with high risk for high returns</label>
                             </div>
                         </div>
                     </div>
@@ -566,7 +473,7 @@
 
                 <!-- SECTION B -->
                 <div class="section">
-                    <h3 class="section-title">Section B - Investment Behaviour</h3>
+                    <h3 class="section-title">Section B — Investment Behaviour</h3>
                     <p class="section-subtitle">4 Questions</p>
 
                     <div class="question">
@@ -696,7 +603,7 @@
 
                 <!-- SECTION C -->
                 <div class="section">
-                    <h3 class="section-title">Section C - Product Awareness</h3>
+                    <h3 class="section-title">Section C — Product Awareness</h3>
                     <p class="section-subtitle">5 Questions</p>
 
                     <div class="question">
@@ -849,7 +756,7 @@
 
                     <div class="question">
                         <label class="question-label">
-                            <span class="question-number">Q14.</span>Did you know that you can take a loan against your Fixed Deposit - without breaking it - and get up to 90% of the FD value instantly?
+                            <span class="question-number">Q14.</span>Did you know that you can take a loan against your Fixed Deposit — without breaking it — and get up to 90% of the FD value instantly?
                         </label>
                         <div class="options">
                             <div class="radio-option">
@@ -870,7 +777,7 @@
 
                 <!-- SECTION D -->
                 <div class="section">
-                    <h3 class="section-title">Section D - Digital vs Branch Preference</h3>
+                    <h3 class="section-title">Section D — Digital vs Branch Preference</h3>
                     <p class="section-subtitle">4 Questions</p>
 
                     <div class="question">
@@ -931,8 +838,8 @@
                         </label>
                         <div class="options">
                             <div class="radio-option">
-                                <input type="radio" name="q17" value="Too many products - I get confused about which to choose" id="q17_1" required>
-                                <label for="q17_1">Too many products - I get confused about which to choose</label>
+                                <input type="radio" name="q17" value="Too many products — I get confused about which to choose" id="q17_1" required>
+                                <label for="q17_1">Too many products — I get confused about which to choose</label>
                             </div>
                             <div class="radio-option">
                                 <input type="radio" name="q17" value="I feel more comfortable talking to a person before investing" id="q17_2">
@@ -947,15 +854,15 @@
                                 <label for="q17_4">I do not know enough about the products available</label>
                             </div>
                             <div class="radio-option">
-                                <input type="radio" name="q17" value="No challenge - I find digital investing easy and convenient" id="q17_5">
-                                <label for="q17_5">No challenge - I find digital investing easy and convenient</label>
+                                <input type="radio" name="q17" value="No challenge — I find digital investing easy and convenient" id="q17_5">
+                                <label for="q17_5">No challenge — I find digital investing easy and convenient</label>
                             </div>
                         </div>
                     </div>
 
                     <div class="question">
                         <label class="question-label">
-                            <span class="question-number">Q18.</span>In the current uncertain economic environment (rising global tensions, crude oil prices, WFH advisory), how has your investment behaviour changed?
+                            <span class="question-number">Q18.</span>In the current uncertain economic environment, how has your investment behaviour changed?
                         </label>
                         <div class="options">
                             <div class="radio-option">
@@ -971,8 +878,8 @@
                                 <label for="q18_3">I have paused all new investments and holding cash</label>
                             </div>
                             <div class="radio-option">
-                                <input type="radio" name="q18" value="I have continued investing as usual - no change" id="q18_4">
-                                <label for="q18_4">I have continued investing as usual - no change</label>
+                                <input type="radio" name="q18" value="I have continued investing as usual — no change" id="q18_4">
+                                <label for="q18_4">I have continued investing as usual — no change</label>
                             </div>
                             <div class="radio-option">
                                 <input type="radio" name="q18" value="I have increased my equity investments to buy at lower prices" id="q18_5">
@@ -984,12 +891,12 @@
 
                 <!-- SECTION E -->
                 <div class="section">
-                    <h3 class="section-title">Section E - Satisfaction & Feedback</h3>
+                    <h3 class="section-title">Section E — Satisfaction & Feedback</h3>
                     <p class="section-subtitle">5 Questions</p>
 
                     <div class="question">
                         <label class="question-label">
-                            <span class="question-number">Q19.</span>Please rate your satisfaction with ICICI Bank on the following parameters: (1 = Very Dissatisfied, 5 = Very Satisfied)
+                            <span class="question-number">Q19.</span>Please rate your satisfaction with ICICI Bank: (1 = Very Dissatisfied, 5 = Very Satisfied)
                         </label>
                         <div class="rating-table">
                             <table>
@@ -1053,7 +960,7 @@
                                         <td><input type="radio" name="q19_speed" value="5"></td>
                                     </tr>
                                     <tr>
-                                        <td>Overall satisfaction with ICICI Bank as an investment destination</td>
+                                        <td>Overall satisfaction with ICICI Bank</td>
                                         <td><input type="radio" name="q19_overall" value="1" required></td>
                                         <td><input type="radio" name="q19_overall" value="2"></td>
                                         <td><input type="radio" name="q19_overall" value="3"></td>
@@ -1067,7 +974,7 @@
 
                     <div class="question">
                         <label class="question-label">
-                            <span class="question-number">Q20.</span>Compared to other banks or investment platforms, how do you rate ICICI Bank's overall investment product offering?
+                            <span class="question-number">Q20.</span>Compared to other banks, how do you rate ICICI Bank's investment offerings?
                         </label>
                         <div class="options">
                             <div class="radio-option">
@@ -1095,7 +1002,7 @@
 
                     <div class="question">
                         <label class="question-label">
-                            <span class="question-number">Q21.</span>What single improvement would make you invest more through ICICI Bank? (Select one)
+                            <span class="question-number">Q21.</span>What single improvement would make you invest more through ICICI Bank?
                         </label>
                         <div class="options">
                             <div class="radio-option">
@@ -1127,32 +1034,32 @@
 
                     <div class="question">
                         <label class="question-label">
-                            <span class="question-number">Q22.</span>In the current uncertain environment, which product do you feel ICICI Bank should focus on and communicate more? (Select up to 2)
+                            <span class="question-number">Q22.</span>Which product should ICICI Bank focus on more? (Select up to 2)
                         </label>
                         <div class="options">
                             <div class="checkbox-option">
-                                <input type="checkbox" name="q22" value="Fixed Deposits - safe, guaranteed returns" id="q22_1">
-                                <label for="q22_1">Fixed Deposits - safe, guaranteed returns</label>
+                                <input type="checkbox" name="q22" value="Fixed Deposits — safe, guaranteed returns" id="q22_1">
+                                <label for="q22_1">Fixed Deposits — safe, guaranteed returns</label>
                             </div>
                             <div class="checkbox-option">
-                                <input type="checkbox" name="q22" value="Health Insurance - financial protection for family" id="q22_2">
-                                <label for="q22_2">Health Insurance - financial protection for family</label>
+                                <input type="checkbox" name="q22" value="Health Insurance — financial protection for family" id="q22_2">
+                                <label for="q22_2">Health Insurance — financial protection for family</label>
                             </div>
                             <div class="checkbox-option">
-                                <input type="checkbox" name="q22" value="Sovereign Gold Bonds - government-backed gold investment" id="q22_3">
-                                <label for="q22_3">Sovereign Gold Bonds - government-backed gold investment</label>
+                                <input type="checkbox" name="q22" value="Sovereign Gold Bonds — government-backed gold investment" id="q22_3">
+                                <label for="q22_3">Sovereign Gold Bonds — government-backed gold investment</label>
                             </div>
                             <div class="checkbox-option">
-                                <input type="checkbox" name="q22" value="PPF / SCSS / Government schemes - sovereign safety" id="q22_4">
-                                <label for="q22_4">PPF / SCSS / Government schemes - sovereign safety</label>
+                                <input type="checkbox" name="q22" value="PPF / SCSS / Government schemes — sovereign safety" id="q22_4">
+                                <label for="q22_4">PPF / SCSS / Government schemes — sovereign safety</label>
                             </div>
                             <div class="checkbox-option">
-                                <input type="checkbox" name="q22" value="Liquid Mutual Funds - safe parking with better returns" id="q22_5">
-                                <label for="q22_5">Liquid Mutual Funds - safe parking with better returns</label>
+                                <input type="checkbox" name="q22" value="Liquid Mutual Funds — safe parking with better returns" id="q22_5">
+                                <label for="q22_5">Liquid Mutual Funds — safe parking with better returns</label>
                             </div>
                             <div class="checkbox-option">
-                                <input type="checkbox" name="q22" value="Balanced Mutual Funds - all-weather investment" id="q22_6">
-                                <label for="q22_6">Balanced Mutual Funds - all-weather investment</label>
+                                <input type="checkbox" name="q22" value="Balanced Mutual Funds — all-weather investment" id="q22_6">
+                                <label for="q22_6">Balanced Mutual Funds — all-weather investment</label>
                             </div>
                             <div class="checkbox-option">
                                 <input type="checkbox" name="q22" value="I am not sure" id="q22_7">
@@ -1163,7 +1070,7 @@
 
                     <div class="question">
                         <label class="question-label">
-                            <span class="question-number">Q23.</span>Would you be interested in visiting your ICICI Bank branch for any of the following if offered? (Select all that apply)
+                            <span class="question-number">Q23.</span>Would you visit your ICICI Bank branch for any of these? (Select all that apply)
                         </label>
                         <div class="options">
                             <div class="checkbox-option">
@@ -1199,7 +1106,7 @@
 
                     <div class="question">
                         <label class="question-label">
-                            <span class="question-number">Q24.</span>Would you recommend ICICI Bank as an investment destination to your family or friends?
+                            <span class="question-number">Q24.</span>Would you recommend ICICI Bank as an investment destination?
                         </label>
                         <div class="options">
                             <div class="radio-option">
@@ -1219,86 +1126,90 @@
 
                     <div class="question">
                         <label class="question-label">
-                            <span class="question-number">Q25.</span>Is there anything specific you would like ICICI Bank to do better for its investment customers?
+                            <span class="question-number">Q25.</span>Anything specific you'd like ICICI Bank to do better?
                         </label>
                         <textarea name="q25" placeholder="Write freely in your own words..."></textarea>
                     </div>
                 </div>
 
                 <div class="success-message" id="successMessage">
-                    Thank you! Your response has been recorded. Your feedback is valuable and will contribute directly to meaningful academic research on customer investment behavior in India.
+                    ✓ Thank you! Response recorded successfully.
                 </div>
 
                 <div class="error-message" id="errorMessage">
-                    Something went wrong. Please try again or contact support if the problem continues.
+                    ✗ Something went wrong. Please try again.
                 </div>
 
                 <div class="submit-section">
-                    <button type="submit" class="submit-btn">Submit Survey</button>
+                    <button type="submit" class="submit-btn" id="submitBtn">Submit Survey</button>
                 </div>
             </form>
         </div>
 
         <div class="footer">
-            Thank you for taking the time to complete this survey. Your honest responses are valuable and will directly contribute to meaningful academic research on customer investment behavior in India.
+            Thank you for your time. Your honest responses are valuable and will contribute to meaningful academic research on customer investment behavior in India.
             <br><br>
-            <strong>- Anushka Sharma | MBA Summer Intern | ICICI Bank</strong>
+            <strong>— Anushka Sharma | MBA Summer Intern | ICICI Bank</strong>
         </div>
     </div>
 
     <script>
-        document.getElementById('surveyForm').addEventListener('submit', function(e) {
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby9sZ1HS4Ai0FKI324YZS_Byj6m29xioBPa_T6NE2yzpRs1xqa9LuP1FGULFOPnqVyy/exec';
+        const form = document.getElementById('surveyForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const submitBtn = document.querySelector('.submit-btn');
             submitBtn.disabled = true;
             submitBtn.textContent = 'Submitting...';
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
             
-            const formData = new FormData(this);
+            const formData = new FormData(form);
+            
+            // Handle checkboxes - combine multiple values
             const data = {};
-            
             for (let [key, value] of formData.entries()) {
-                if (!data[key]) {
-                    data[key] = value;
-                } else {
-                    if (!Array.isArray(data[key])) {
-                        data[key] = [data[key]];
+                if (data[key]) {
+                    if (Array.isArray(data[key])) {
+                        data[key].push(value);
+                    } else {
+                        data[key] = [data[key], value];
                     }
-                    data[key].push(value);
+                } else {
+                    data[key] = value;
                 }
             }
             
+            // Convert arrays to comma-separated strings
             for (let key in data) {
                 if (Array.isArray(data[key])) {
                     data[key] = data[key].join(', ');
                 }
             }
             
-            data.timestamp = new Date().toLocaleString('en-IN');
-            
-            const scriptURL = 'https://script.google.com/macros/s/AKfycby9sZ1HS4Ai0FKI324YZS_Byj6m29xioBPa_T6NE2yzpRs1xqa9LuP1FGULFOPnqVyy/exec';
-            
+            // Submit using URLSearchParams (avoids CORS)
             fetch(scriptURL, {
                 method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
+                body: new URLSearchParams(data)
             })
             .then(response => response.json())
             .then(result => {
-                document.getElementById('successMessage').style.display = 'block';
-                document.getElementById('errorMessage').style.display = 'none';
-                this.reset();
+                console.log('Success:', result);
+                successMessage.style.display = 'block';
+                errorMessage.style.display = 'none';
+                form.reset();
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Submit Survey';
-                
-                document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
             })
             .catch(error => {
                 console.error('Error:', error);
-                document.getElementById('errorMessage').style.display = 'block';
-                document.getElementById('successMessage').style.display = 'none';
+                errorMessage.style.display = 'block';
+                successMessage.style.display = 'none';
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Submit Survey';
             });
